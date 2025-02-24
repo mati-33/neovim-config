@@ -32,6 +32,10 @@ vim.keymap.set("n", "x", '"_x', opts)
 vim.keymap.set("n", "<C-d>", "10jzz", opts)
 vim.keymap.set("n", "<C-u>", "10kzz", opts)
 
+-- Move highlighted text
+vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
+
 -- Find and center
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)

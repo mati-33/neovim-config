@@ -30,19 +30,18 @@ return {
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        
-				section_separators = { left = "", right = "" },
-				component_separators = { left = "", right = "" },
-				disabled_filetypes = { "alpha", "neo-tree" },
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
+				disabled_filetypes = { "neo-tree" },
 				always_divide_middle = true,
 			},
 			sections = {
 				lualine_a = { mode },
-				lualine_b = { "branch" },
-				lualine_c = { "buffers" },
+				lualine_b = {},
+				lualine_c = { { "filename", path = 1 } },
 				lualine_x = {
+					"branch",
 					diagnostics,
-					"diff",
-					{ "encoding", cond = hide_in_width },
 					{ "filetype", cond = hide_in_width },
 				},
 				lualine_y = { "location" },

@@ -34,5 +34,7 @@ return {
 		vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>", {})
 		vim.keymap.set({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>", {})
 		vim.keymap.set({ "n", "v" }, "<leader>gS", ":Gitsigns undo_stage_hunk<CR>", {})
+		vim.keymap.set("n", "[h", ":Gitsigns next_hunk<CR>", {})
+		vim.keymap.set("n", "]h", ":Gitsigns prev_hunk<CR>", {})
 	end,
 }

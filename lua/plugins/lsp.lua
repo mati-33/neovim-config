@@ -112,6 +112,9 @@ return {
 		local servers = {
 			ts_ls = {}, -- tsserver is deprecated
 			basedpyright = {
+				root_dir = function(_)
+					return vim.fn.getcwd()
+				end,
 				settings = {
 					basedpyright = {
 						analysis = {

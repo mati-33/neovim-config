@@ -29,12 +29,16 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk_inline<CR>", {})
-		vim.keymap.set("n", "<leader>bl", ":Gitsigns toggle_current_line_blame<CR>", {})
-		vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>", {})
-		vim.keymap.set({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>", {})
-		vim.keymap.set({ "n", "v" }, "<leader>gS", ":Gitsigns undo_stage_hunk<CR>", {})
-		vim.keymap.set("n", "[h", ":Gitsigns next_hunk<CR>", {})
-		vim.keymap.set("n", "]h", ":Gitsigns prev_hunk<CR>", {})
+		local gs = require("gitsigns")
+
+		vim.keymap.set("n", "<leader>gp", gs.preview_hunk_inline, {})
+		vim.keymap.set("n", "<leader>bl", gs.toggle_current_line_blame, {})
+		vim.keymap.set("n", "<leader>gb", gs.blame_line, {})
+		vim.keymap.set("n", "<leader>gd", gs.diffthis, {})
+		vim.keymap.set({ "n", "v" }, "<leader>gs", gs.stage_hunk, {})
+		vim.keymap.set({ "n", "v" }, "<leader>gS", gs.undo_stage_hunk, {})
+		vim.keymap.set({ "n", "v" }, "<leader>gr", gs.reset_hunk, {})
+		vim.keymap.set("n", "[h", gs.next_hunk, {})
+		vim.keymap.set("n", "]h", gs.prev_hunk, {})
 	end,
 }

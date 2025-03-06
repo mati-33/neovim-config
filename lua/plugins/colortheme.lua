@@ -29,6 +29,7 @@ return {
 				-- this supports the same val table as vim.api.nvim_set_hl
 				-- use colors from this colorscheme by requiring vscode.colors!
 				Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+				NeoTreeIndentMarker = { fg = "#444444", bg = "NONE", bold = true },
 			},
 		})
 		-- require('vscode').load()

@@ -21,6 +21,7 @@ return {
 
 		-- Useful for getting pretty icons, but requires a Nerd Font.
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		{ "mati-33/multigit.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -58,7 +59,7 @@ return {
 		-- Enable Telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
-		require("telescope").load_extension("multigit")
+		pcall(require("telescope").load_extension, "multigit")
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")

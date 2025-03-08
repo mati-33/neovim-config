@@ -30,6 +30,7 @@ return {
 				-- use colors from this colorscheme by requiring vscode.colors!
 				Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
 				NeoTreeIndentMarker = { fg = "#444444", bg = "NONE", bold = true },
+				GitSignsChange = { fg = "#1167b1", bg = "NONE" },
 			},
 		})
 		-- require('vscode').load()

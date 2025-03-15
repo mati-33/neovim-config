@@ -74,6 +74,18 @@ return {
 		vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
+		-- Git
+		vim.keymap.set("n", "<leader>sgs", function()
+			builtin.git_status({ cwd = vim.fn.FugitiveWorkTree() })
+		end, { desc = "[S]earch [G]it [S]tatus" })
+		vim.keymap.set("n", "<leader>sgb", function()
+			builtin.git_branches({ cwd = vim.fn.FugitiveWorkTree() })
+		end, { desc = "[S]earch [G]it [B]ranches" })
+		vim.keymap.set("n", "<leader>sgh", function()
+			builtin.git_bcommits({ cwd = vim.fn.FugitiveWorkTree() })
+		end, { desc = "[S]earch [G]it current file [H]istory" })
+
+		-- MultiGit
 		vim.keymap.set("n", "<leader>mgf", function()
 			require("telescope").extensions.multigit.changed_files()
 		end, { desc = "[M]ulti[G]it changed [F]iles", noremap = true })

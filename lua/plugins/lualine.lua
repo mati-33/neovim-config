@@ -26,6 +26,20 @@ return {
 			end,
 		}
 
+		local pyenv = {
+			function()
+				local env = os.getenv("VIRTUAL_ENV")
+				if not env then
+					return ""
+				end
+				local pyversion = vim.fn.system("python --version | awk '{print $2}'"):gsub("%s+$", "")
+				return " " .. env:match("^.+/(.+)$") .. " (" .. pyversion .. ")"
+			end,
+			cond = function()
+				return os.getenv("VIRTUAL_ENV") ~= ""
+			end,
+		}
+
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -44,6 +58,7 @@ return {
 				lualine_c = { { "filename", path = 1 } },
 				lualine_x = {
 					macro,
+					pyenv,
 					"branch",
 					diagnostics,
 					{ "filetype", cond = hide_in_width },

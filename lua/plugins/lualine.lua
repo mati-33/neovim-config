@@ -16,6 +16,16 @@ return {
 			cond = hide_in_width,
 		}
 
+		local macro = {
+			function()
+				local reg = vim.fn.reg_recording()
+				return "recording @" .. reg
+			end,
+			cond = function()
+				return vim.fn.reg_recording() ~= ""
+			end,
+		}
+
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -33,6 +43,7 @@ return {
 				lualine_b = {},
 				lualine_c = { { "filename", path = 1 } },
 				lualine_x = {
+					macro,
 					"branch",
 					diagnostics,
 					{ "filetype", cond = hide_in_width },

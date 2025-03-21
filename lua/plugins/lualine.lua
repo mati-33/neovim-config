@@ -32,8 +32,7 @@ return {
 				if not env then
 					return ""
 				end
-				local pyversion = vim.fn.system("python --version | awk '{print $2}'"):gsub("%s+$", "")
-				return " " .. env:match("^.+/(.+)$") .. " (" .. pyversion .. ")"
+				return " " .. env:match("^.+/(.+)$")
 			end,
 			cond = function()
 				return os.getenv("VIRTUAL_ENV") ~= ""

@@ -124,6 +124,7 @@ return {
 					},
 				},
 			},
+			gopls = {},
 
 			html = { filetypes = { "html", "twig", "hbs" } },
 			cssls = {},

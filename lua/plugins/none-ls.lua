@@ -19,6 +19,7 @@ return {
 				"checkmake", -- linter for Makefiles
 				"black", -- Python formatter
 				"isort", -- Python imports sorter
+				"gofmt", -- Go formatter
 			},
 			automatic_installation = true,
 		})
@@ -31,6 +32,7 @@ return {
 			formatting.terraform_fmt,
 			formatting.black,
 			formatting.isort,
+			formatting.gofmt,
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

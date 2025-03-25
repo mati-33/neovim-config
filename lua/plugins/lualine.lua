@@ -42,7 +42,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "vscode", -- Set theme based on environment variable
+				theme = vim.g.colors_name,
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        

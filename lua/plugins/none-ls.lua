@@ -26,13 +26,13 @@ return {
 
 		local sources = {
 			diagnostics.checkmake,
-			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
-			formatting.stylua,
+			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript" } }),
+			formatting.stylua.with({ filetypes = { "lua" } }),
 			formatting.shfmt.with({ args = { "-i", "4" } }),
-			formatting.terraform_fmt,
-			formatting.black,
-			formatting.isort,
-			formatting.gofmt,
+			-- formatting.terraform_fmt,
+			formatting.black.with({ filetypes = { "python" } }),
+			formatting.isort.with({ filetypes = { "python" } }),
+			formatting.gofmt.with({ filetypes = { "go" } }),
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

@@ -82,6 +82,3 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
-
--- exit insert mode
-vim.keymap.set("i", "<C-b>", "<Esc>", opts)

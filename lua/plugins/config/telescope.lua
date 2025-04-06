@@ -2,7 +2,7 @@ require("telescope").setup({
 	-- You can put your default mappings / updates / etc. in here
 	--  All the info you're looking for is in `:help telescope.setup()`
 	defaults = {
-		path_display = { "smart" },
+		path_display = { "truncate" },
 		mappings = {
 			i = {
 				["<C-k>"] = require("telescope.actions").move_selection_previous, -- move to prev result

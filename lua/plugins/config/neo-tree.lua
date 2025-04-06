@@ -10,3 +10,4 @@ require("neo-tree").setup({
 })
 
 vim.keymap.set("n", "\\", ":Neotree reveal<CR>", {})
+vim.keymap.set("n", "|", ":Neotree buffers float<CR>", {})

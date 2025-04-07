@@ -42,7 +42,7 @@ vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps"
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+-- vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
@@ -92,21 +92,14 @@ local pickers = require("telescope.pickers")
 
 local flatten = vim.tbl_flatten
 
--- i would like to be able to do telescope
--- and have telescope do some filtering on files and some grepping
-
 local multigrep = function(opts)
 	opts = opts or {}
 	opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.loop.cwd()
-	opts.shortcuts = opts.shortcuts
-		or {
-			["l"] = "*.lua",
-			["v"] = "*.vim",
-			["n"] = "*.{vim,lua}",
-			["c"] = "*.c",
-			["r"] = "*.rs",
-			["g"] = "*.go",
-		}
+	opts.shortcuts = opts.shortcuts or {
+		["l"] = "*.lua",
+		["p"] = "*.py",
+		["y"] = "*.yaml",
+	}
 	opts.pattern = opts.pattern or "%s"
 
 	local custom_grep = finders.new_async_job({
@@ -156,4 +149,4 @@ local multigrep = function(opts)
 		:find()
 end
 
-vim.keymap.set("n", "<leader>fg", multigrep, {})
+vim.keymap.set("n", "<leader>sg", multigrep, {})

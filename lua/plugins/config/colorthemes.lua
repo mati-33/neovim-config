@@ -4,7 +4,7 @@ require("vscode").setup({
 	-- style = 'light'
 
 	-- Enable transparent background
-	transparent = false,
+	transparent = true,
 
 	-- Enable italic comment
 	italic_comments = true,
@@ -27,6 +27,8 @@ require("vscode").setup({
 		Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
 		NeoTreeIndentMarker = { fg = "#444444", bg = "NONE", bold = true },
 		GitSignsChange = { fg = "#1167b1", bg = "NONE" },
+		TreesitterContext = { bg = "NONE" },
+		TreesitterContextBottom = { underline = true, sp = "#272727" },
 	},
 })
 

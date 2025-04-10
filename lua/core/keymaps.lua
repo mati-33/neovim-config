@@ -82,3 +82,5 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
+
+vim.keymap.set("i", "<C-k>", "<Esc>ea", { noremap = true })

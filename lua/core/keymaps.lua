@@ -84,3 +84,4 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
 
 vim.keymap.set("i", "<C-k>", "<Esc>ea", { noremap = true })
+vim.keymap.set("n", "<leader>l", ":source %<CR>", { desc = "execute current lua file" })

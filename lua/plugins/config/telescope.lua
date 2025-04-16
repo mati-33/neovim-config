@@ -1,9 +1,11 @@
+vim.api.nvim_set_hl(0, "FindFilesFileTail", { fg = "#9c9c9c" })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "TelescopeResults",
 	callback = function(ctx)
 		vim.api.nvim_buf_call(ctx.buf, function()
 			vim.fn.matchadd("TelescopeParent", "\t\t.*$")
-			vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+			vim.api.nvim_set_hl(0, "TelescopeParent", { link = "FindFilesFileTail" })
 		end)
 	end,
 })
@@ -109,6 +111,10 @@ vim.keymap.set("n", "g9", function()
 	}
 	builtin.lsp_document_symbols(opts)
 end, { desc = "classes, methods and functions" })
+
+vim.keymap.set("n", "<leader>fa", function()
+	builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
+end)
 
 local conf = require("telescope.config").values
 local finders = require("telescope.finders")

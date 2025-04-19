@@ -73,6 +73,18 @@ local get_customized_vscode_theme = function()
 	return custom_vscode
 end
 
+local file_parent = {
+	function()
+		local relative_filepath = vim.fn.expand("%:.")
+		local parent = vim.fs.dirname(relative_filepath)
+		if parent == "." then
+			return ""
+		end
+		return parent
+	end,
+	color = { fg = "#9c9c9c" },
+}
+
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -95,7 +107,8 @@ require("lualine").setup({
 		lualine_c = {
 			diagnostics,
 			{ "filetype", icon_only = true },
-			{ "filename", path = 1 },
+			{ "filename", path = 0 },
+			file_parent,
 			"searchcount",
 		},
 		lualine_x = {

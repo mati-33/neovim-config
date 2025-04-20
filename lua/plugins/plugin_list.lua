@@ -119,4 +119,8 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+	},
 })

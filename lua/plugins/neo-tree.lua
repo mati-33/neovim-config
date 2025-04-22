@@ -21,7 +21,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "\\", ":Neotree reveal<CR>", {})
-		vim.keymap.set("n", "|", ":Neotree buffers float<CR>", {})
+		-- vim.keymap.set("n", "\\", ":Neotree reveal<CR>", {})
+		-- vim.keymap.set("n", "|", ":Neotree buffers float<CR>", {})
 	end,
 }

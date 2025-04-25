@@ -20,6 +20,5 @@ return {
 		vim.keymap.set("n", "<leader>ng", function()
 			neogit.open({ cwd = "%:p:h" })
 		end, {})
-		vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", {})
 	end,
 }

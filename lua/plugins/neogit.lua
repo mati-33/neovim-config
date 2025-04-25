@@ -10,6 +10,11 @@ return {
 
 		neogit.setup({
 			graph_style = "unicode",
+			highlight = {
+				italic = false,
+				bold = false,
+				underline = false,
+			},
 		})
 
 		vim.keymap.set("n", "<leader>ng", function()

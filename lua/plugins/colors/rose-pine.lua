@@ -93,6 +93,14 @@ return {
 				GitSignsAddLn = { bg = git_sings_colors.add },
 				GitSignsChangeLn = { bg = git_sings_colors.change },
 				GitSignsDeleteLn = { bg = git_sings_colors.delete },
+
+				["@boolean"] = { fg = "foam" },
+				["@constant.builtin"] = { fg = "foam" },
+				["@constant"] = { fg = "rose" },
+				["@keyword.operator"] = { fg = "pine" },
+				["@lsp.type.parameter"] = { fg = "#84c7f5" },
+				["@number"] = { fg = "foam" },
+				["@variable.member"] = { fg = "text" },
 			},
 
 			before_highlight = function(group, highlight, palette)

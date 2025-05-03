@@ -101,6 +101,7 @@ return {
 				["@lsp.type.parameter"] = { fg = "#84c7f5" },
 				["@number"] = { fg = "foam" },
 				["@variable.member"] = { fg = "text" },
+				["@variable.parameter"] = { fg = "#84c7f5" },
 			},
 
 			before_highlight = function(group, highlight, palette)

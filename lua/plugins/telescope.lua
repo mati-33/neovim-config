@@ -61,6 +61,7 @@ return {
 					path_display = filenameFirst,
 				},
 				buffers = {
+					path_display = filenameFirst,
 					mappings = {
 						i = {
 							["<C-r>"] = require("telescope.actions").delete_buffer,

@@ -17,9 +17,10 @@ return {
 				"eslint_d", -- ts/js linter
 				"shfmt", -- Shell formatter
 				"checkmake", -- linter for Makefiles
-				"black", -- Python formatter
-				"isort", -- Python imports sorter
+				-- "black", -- Python formatter
+				-- "isort", -- Python imports sorter
 				"gofmt", -- Go formatter
+				"ruff", -- Python
 			},
 			automatic_installation = true,
 		})
@@ -30,8 +31,11 @@ return {
 			formatting.stylua.with({ filetypes = { "lua" } }),
 			formatting.shfmt.with({ args = { "-i", "4" } }),
 			-- formatting.terraform_fmt,
-			formatting.black.with({ filetypes = { "python" } }),
-			formatting.isort.with({ filetypes = { "python" } }),
+			-- formatting.black.with({ filetypes = { "python" } }),
+			-- formatting.isort.with({ filetypes = { "python" } }),
+			require("none-ls.formatting.ruff").with({ filetypes = { "python" } }),
+			require("none-ls.formatting.ruff_format").with({ filetypes = { "python" } }),
+
 			formatting.gofmt.with({ filetypes = { "go" } }),
 		}
 

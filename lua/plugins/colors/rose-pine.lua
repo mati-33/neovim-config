@@ -82,11 +82,6 @@ return {
 
 				TreesitterContextBottom = { underline = true, sp = "#333333" },
 
-				DiffAdd = { fg = "NONE", bg = diff_colors.add, inherit = false },
-				DiffDelete = { fg = "NONE", bg = diff_colors.delete, inherit = false },
-				DiffChange = { fg = "NONE", bg = diff_colors.change, inherit = false },
-				DiffText = { fg = "NONE", bg = diff_colors.text, inherit = false },
-
 				GitSignsAdd = { fg = git_sings_colors.add, bg = "NONE" },
 				GitSignsChange = { fg = git_sings_colors.change, bg = "NONE" },
 				GitSignsDelete = { fg = git_sings_colors.delete, bg = "NONE" },
@@ -94,8 +89,9 @@ return {
 				GitSignsChangeLn = { bg = git_sings_colors.change },
 				GitSignsDeleteLn = { bg = git_sings_colors.delete },
 
-				["@boolean"] = { fg = "foam" },
-				["@constant.builtin"] = { fg = "foam" },
+				["@boolean"] = { fg = "pine" },
+				["@constant.builtin"] = { fg = "pine" },
+
 				["@constant"] = { fg = "rose" },
 				["@keyword.operator"] = { fg = "pine" },
 				["@lsp.type.parameter"] = { fg = "#84c7f5" },

@@ -1,10 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
-		local hide_in_width = function()
-			return vim.fn.winwidth(0) > 100
-		end
-
 		local diagnostics = {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
@@ -13,7 +9,6 @@ return {
 			colored = true,
 			update_in_insert = false,
 			always_visible = false,
-			cond = hide_in_width,
 		}
 
 		local macro = {
@@ -59,8 +54,8 @@ return {
 				end
 			end
 
-			local bg_color = "#202020"
-			local b_fg_color = "#0077b6"
+			local bg_color = "None"
+			local b_fg_color = "#3e8fb0"
 
 			-- c for visual mode is not defined
 			custom_vscode.visual.c = { bg = bg_color }

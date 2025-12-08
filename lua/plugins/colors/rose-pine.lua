@@ -8,13 +8,6 @@ return {
 			delete = "#F44747",
 		}
 
-		local diff_colors = {
-			add = "#2e4b2e",
-			change = "#45565c",
-			delete = "#4c1e15",
-			text = "#996d74",
-		}
-
 		require("rose-pine").setup({
 			variant = "moon", -- auto, main, moon, or dawn
 			dark_variant = "main", -- main, moon, or dawn
@@ -70,6 +63,10 @@ return {
 				--     base = '#18191a',
 				--     overlay = '#363738',
 				-- },
+				moon = {
+					pine = "#286983",
+					foam = "#65abb8",
+				},
 			},
 
 			-- NOTE: Highlight groups are extended (merged) by default. Disable this
@@ -94,10 +91,8 @@ return {
 
 				["@constant"] = { fg = "rose" },
 				["@keyword.operator"] = { fg = "pine" },
-				["@lsp.type.parameter"] = { fg = "#84c7f5" },
 				["@number"] = { fg = "foam" },
 				["@variable.member"] = { fg = "text" },
-				["@variable.parameter"] = { fg = "#84c7f5" },
 			},
 
 			before_highlight = function(group, highlight, palette)
